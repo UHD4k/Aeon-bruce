@@ -199,7 +199,7 @@ def source(self):
 
 
 def get_readable_message():
-    msg = """<b>💫 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒: @MiguelLeech \n 🧑‍💻 Deploy By: anmol</b>\n\n"""
+    msg = """<b>🔰 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 : @TamilxLinks \n 👨🏻‍💻 Deploy By : Ƭɴ69 ×͜× Sᴀʀᴀᴠᴀɴᴀ࿐</b>\n\n"""
     button = None
     tasks = len(download_dict)
     currentTime = get_readable_time(time() - botStartTime)
@@ -213,11 +213,11 @@ def get_readable_message():
         globals()['PAGE_NO'] = PAGES
     for download in list(download_dict.values())[STATUS_START:STATUS_LIMIT+STATUS_START]:
         msg += f"<b>{download.status()}</b>: {escape(f'{download.name()}')}"
-        msg += f"<b> \n ┠ 🥷 User: {source(download)}</b>\n"
+        msg += f"<b> \n ┠  User: {source(download)}</b>\n"
         if download.status() not in [MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_PROCESSING]:
             msg += f" ┠ <code>{progress_bar(download.progress())}</code> {download.progress()}"
             msg += f"\n ┠ 📊 {download.processed_bytes()} of {download.size()}"
-            msg += f"<b>\n ┠ 🥶 Speed:</b> {download.speed()}"
+            msg += f"<b>\n ┠ 🚀 Speed:</b> {download.speed()}"
             msg += f'<b>\n ┠ ⏳ Estimated:</b> {download.eta()}'
             if hasattr(download, 'seeders_num'):
                 try:
@@ -252,12 +252,12 @@ def get_readable_message():
         buttons.ibutton(f"{PAGE_NO}/{PAGES}", "status ref")
         buttons.ibutton("Next", "status nex")
         button = buttons.build_menu(3)
-    msg += f"<b>    Thanks To Using Bot \n     Please Share Group Link Bio</b> \n\n"
+    msg += f"<b>      Thanks To Using Bot \n  Please Share Group Link Bio</b> \n\n"
     msg += f"<b> Tasks</b>: {tasks}{bmax_task}"
-    msg += f"\n<b> Bot uptime 📟</b>: {currentTime}"
-    msg += f"\n<b> Free disk space 💽</b>: {get_readable_file_size(disk_usage('/usr/src/app/downloads/').free)}"
-    msg += f"\n<b> Uploading Speed 📤</b>: {get_readable_file_size(up_speed)}/s"
-    msg += f"\n<b> Downloading speed 📥</b>: {get_readable_file_size(dl_speed)}/s"
+    msg += f"\n<b>⏰ Bot Uptime </b>: {currentTime}"
+    msg += f"\n<b>💿 Free Disk Space </b>: {get_readable_file_size(disk_usage('/usr/src/app/downloads/').free)}"
+    msg += f"\n<b>📤 Uploading Speed </b>: {get_readable_file_size(up_speed)}/s"
+    msg += f"\n<b>📥 Downloading Speed </b>: {get_readable_file_size(dl_speed)}/s"
     return msg, button
 
 
